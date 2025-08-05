@@ -235,7 +235,7 @@ const portIdleSend = (port, context, queue) => {
         const idleSendReset = () => {
             timer && clearTimeout(timer);
             timer = setTimeout(() => {
-                portEventDispatch(port, context, DISCARD, 'idleSend', port.log.trace, queue);
+                if (port.isReady) portEventDispatch(port, context, DISCARD, 'idleSend', port.log.trace, queue);
                 idleSendReset();
             }, port.config.idleSend);
         };
@@ -580,7 +580,7 @@ const portDuplex = (port, context, stream, sendQueue) => {
 };
 
 const drainSend = (port, context) => queueLength => {
-    return portEventDispatch(port, context, {length: queueLength, interval: port.config.drainSend}, 'drainSend', port.log.info);
+    return port.isReady && portEventDispatch(port, context, {length: queueLength, interval: port.config.drainSend}, 'drainSend', port.log.info);
 };
 
 const pullExec = (port, context, exec) => pull(
