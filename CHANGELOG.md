@@ -1,3 +1,7 @@
+## [6.45.3](https://github.com/softwaregroup-bg/ut-port/compare/v6.45.2...v6.45.3) (2025-08-05)
+
+
+
 ## [6.45.2](https://github.com/softwaregroup-bg/ut-port/compare/v6.45.1...v6.45.2) (2023-07-21)
 
 
