@@ -18,7 +18,7 @@
     "ut-tools": "^6.41.1"
   },
   "peerDependencies": {
-    "ut-bus": "^7.61.0"
+    "ut-bus": "^7.66.0"
   },
   "browser": {
     "stack-utils": false,
